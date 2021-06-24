@@ -1,19 +1,21 @@
 name: GitHub Actions Build and Deploy Demo
-on:
-  push:
-    branches:
-      - master
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@master
 
-      - name: Build and Deploy
-        uses: JamesIves/github-pages-deploy-action@master
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: master
-          FOLDER: dist
-          BUILD_SCRIPT: npm install && npm run build
+sudo: false
+language: node_js
+node_js:
+  - 12.22.1
+cache: yarn
+
+install:
+  - yarn install
+
+script:
+  - yarn test
+  - yarn build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  on: 
+    branch: master
