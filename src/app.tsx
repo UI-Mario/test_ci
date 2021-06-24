@@ -20,6 +20,7 @@ function App() {
   return (
     // <IntlProvider locale={usersLocale} messages={trans}>
     <BrowserRouter>
+      <div>123</div>
       <TestPreLoadComponent />
       {/* HashRouter里面一定要有一个根节点，不能直接写Route */}
       <div>
