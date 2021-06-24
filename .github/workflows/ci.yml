@@ -13,7 +13,7 @@ script:
 
 deploy:
   provider: pages
-  skip-cleanup: false
+  skip-cleanup: true
   github-token: $GITHUB_TOKEN
   local_dir: dist
   on: 
