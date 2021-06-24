@@ -1,7 +1,8 @@
 sudo: false
 language: node_js
 node_js:
-  - 12.22.1
+  - 12.22.9
+cache: yarn
 
 install:
   - yarn install
