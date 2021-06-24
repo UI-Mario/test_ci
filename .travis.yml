@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-  - 12.22.1
+  - 12.22.9
 cache: yarn
 
 install:
@@ -16,5 +16,6 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   local_dir: dist
-  on:
-    branch: gh-pages
+  target_branch: test
+  on: 
+    branch: master
