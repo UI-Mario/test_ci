@@ -12,9 +12,13 @@ script:
 
 deploy:
   provider: pages
+  # 很重要的一个字段，因为我们是需要build后出来的dist文件夹，不能删掉
   skip_cleanup: true
+  # 这是从github设置token，放到travis里面当变量
   token: $GITHUB_TOKEN
+  # build出来的在dist文件夹下
   local_dir: dist
+  # target_branch，travis帮你push的branch名，可以设成githubpage对应的branch
   target_branch: test
   on: 
     branch: master
