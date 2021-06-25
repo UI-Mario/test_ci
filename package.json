@@ -7,6 +7,7 @@
     "lint": "prettier --write . && eslint . --fix",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/config/webpack.dev.js",
     "test": "jest",
+    "run:sh": "sh test01.sh",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack/config/webpack.prod.js"
   },
   "repository": {
