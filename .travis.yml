@@ -3,9 +3,17 @@ node_js:
   - 12.22.1
 cache: yarn
 
+# 分为install, script和deploy三个阶段
+
+# 写成install: true可以跳过install
 install:
   - yarn install
 
+# 脚本，用来构建或测试
+# 同时, script和install执行过程中有差异
+# 当script某个command失败，并不会像install那样停下来
+# 而是会继续执行其他command，但整个构建过程是失败的
+# (莫不是因为script用了并行:sassy_man:)
 script:
   - yarn test
   - yarn build
