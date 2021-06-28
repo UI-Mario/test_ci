@@ -3,6 +3,11 @@ node_js:
   - 12.22.1
 cache: yarn
 
+# 设置需要监听的分支
+branches:
+  only:
+    - master
+
 # 分为install, script和deploy三个阶段
 
 # 写成install: true可以跳过install
